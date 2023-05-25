@@ -48,25 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const updateButtons = document.querySelectorAll('[ms-code-update="json"]');
-
-  updateButtons.forEach(button => {
-    button.addEventListener("click", async function() {
-      const memberstack = window.$memberstackDom;
-
-      // Add a delay
-      await new Promise(resolve => setTimeout(resolve, 500));
-
-      // Retrieve the current member JSON data
-      const member = await memberstack.getMemberJSON();
-
-      // Save the member JSON as a local storage item
-      localStorage.setItem("memberJSON", JSON.stringify(member));
-    });
-  });
-});
-
 document.addEventListener("DOMContentLoaded", async function() {
     const memberstack = window.$memberstackDom;
   
